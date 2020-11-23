@@ -3,7 +3,7 @@
 #include "pokemon.hpp"
 using namespace std;
 
-ofstream output(L"C:\\Users\\Катя\\Documents\\лр1\\output.txt");
+ofstream output(L"output.json");
 
 void record(Pokemon pokemon){
     output << "{ \"pokemons\" : [{ \"name\" :\"" << pokemon.getName()
