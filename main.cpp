@@ -13,8 +13,19 @@ void record(Pokemon pokemon){
     << ", \"speed\":" << pokemon.getSpeed() << "}]}\n";
 }
 
+void recordToFile(Pokemon pokemon, ofstream& _output){
+    _output << "{ \"pokemons\" : [{ \"name\" :\"" << pokemon.getName()
+    << "\", \"HP\":" << pokemon.getHP()
+    << ", \"attack\":" << pokemon.getAttack()
+    << ", \"defense\":" << pokemon.getDefense()
+    << ", \"speed\":" << pokemon.getSpeed() << "}]}\n";
+}
+
+
 int main(){
     Pokemon pokemon("Pikachuu", 1500, 485, 230, 100);
     record(pokemon);
+    ofstream output(L"_output.json");
+    recordToFile(pokemon, _output);
     return 0;
 }
